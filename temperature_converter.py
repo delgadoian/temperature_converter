@@ -37,6 +37,11 @@ def convert_to():
             print("Please enter a valid selection\n\n\n")
             metric_convert_to = convert_to()
 
+# This function will collect the numerical value of the temperature we are converting to
+def temp_num():
+    num = input("How many degrees is your temperature? (Enter a numerical value) >> ")
+    return num
+
 # Function converts temperature from fahrenheit to celsius
 def fah_to_cel(fah_temp):
     cel_temp = (fah_temp - 32) * 5/9
@@ -74,16 +79,32 @@ def kelvin_to_fah(kelvin_temp):
     fah_temp = cel_to_fah(cel_temp)
     return round(fah_temp, 3)
 
+# Dictionary that will hold the different options of conversion, we will use this when we ask 
+# the user what metric they are in and what metric they would like to convert to
 
-# def main():
-#     welcome_menu()
-#     chosen_metric = metric_selection()
-#     convert_to_metric = convert_to()
+convert_dict = {
+    "1,2": fah_to_cel,
+    "1,3": fah_to_cel,
+    "2,1": cel_to_fah,
+    "2,3": cel_to_kelvin,
+    "3,1": kelvin_to_fah,
+    "3,2": kelvin_to_celsius
+}
 
-#     print(f"chosen_metric: {chosen_metric}")
-#     print(f"convert_to: {convert_to_metric}")
+def main():
+    welcome_menu()
+    chosen_metric = metric_selection()
+    convert_to_metric = convert_to()
+    temp_value = temp_num()
 
+    # combine the chosen metric and convert to metric so that we can get the appropriate function from the dictionary
+    convert_dict_code = chosen_metric + "," + convert_to_metric
 
-# main()
+    # Call the corresponding function by using the .get() method on the switch dictionary
+    print(convert_dict.get(convert_dict_code)(int(temp_value)))
 
-print(kelvin_to_fah(0))
+    # TODO
+    # Add functionality so that the conversion functions also return their unit along with the numerical value (ex: 160 degrees F)
+    
+main()
+
