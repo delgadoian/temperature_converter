@@ -18,12 +18,12 @@ def clear_terminal():
 # Run the temperature converter program
 def run_temperature_converter():
     try:
-        subprocess.run([sys.executable, "temperature_converter.py"], check=True)
+        subprocess.run([sys.executable, "main.py"], check=True)
     except subprocess.CalledProcessError as error:
-        print(Back.RED + Fore.WHITE + f"An error occurred when running temperature_converter.py: {error}")
+        print(Back.RED + Fore.WHITE + f"An error occurred when running the temperature converter: {error}")
         sys.exit()
     except FileNotFoundError:
-        print(Back.RED + Fore.WHITE + "Error: Could not find temperature_converter.py, please make sure the file is downloaded\n")
+        print(Back.RED + Fore.WHITE + "Error: Could not find main.py, please make sure the file is downloaded\n")
         sys.exit()
 
 # Call the functions

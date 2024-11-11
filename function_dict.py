@@ -6,7 +6,7 @@ import conversion_functions as con_func
 
 convert_dict = {
     "1,2": con_func.fah_to_cel,
-    "1,3": con_func.fah_to_cel,
+    "1,3": con_func.fah_to_kelvin,
     "2,1": con_func.cel_to_fah,
     "2,3": con_func.cel_to_kelvin,
     "3,1": con_func.kelvin_to_fah,

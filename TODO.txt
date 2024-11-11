@@ -1,0 +1,5 @@
+TODO:
+
+1. Create test functions with unittest
+2. Refactor code into smaller functions to reduce complexity
+
