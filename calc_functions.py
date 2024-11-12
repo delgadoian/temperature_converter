@@ -46,7 +46,7 @@ def convert_to():
             continue
         # Continue to execute until valid input is chosen
         try:
-            # If the user has chosen a valid vaalue, then return
+            # If the user has chosen a valid value, then return
             if ((unit_convert_to == 1) or (unit_convert_to == 2) or (unit_convert_to == 3)):
                 return unit_convert_to
             else:
@@ -62,6 +62,7 @@ def convert_to():
 
 # This function will collect the numerical value of the temperature we are converting to
 def temp_num():
+    # Continue prompting while a valid number is given as input
     while True:
         try:
             num = float(input("How many degrees is your temperature? (Enter a numerical value) >> "))
